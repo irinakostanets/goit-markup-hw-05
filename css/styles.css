@@ -90,6 +90,8 @@ p {color: var(--p-text-color);}
     line-height: 1.14;
     letter-spacing: 0.02em;
     text-decoration: none;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .site-page:hover,
 .site-page:focus {
@@ -110,6 +112,38 @@ p {color: var(--p-text-color);}
     background-color: var(--accent-color);
     border-radius: 2px;
 }
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.2);
+
+    opacity: 1;
+    transition: opacity 250ms;
+}
+.backdrop.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+.backdrop.is-hidden .modal {
+    transform: translate(-50% -50%) scale(0.9);
+}
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 528px;
+    min-height: 581px;
+    padding: 15px;
+    background-color: var(--white-color);
+
+    transform: translate(-50% -50%) scale(1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .contact {
     display: flex;
     margin-left: auto;
@@ -129,17 +163,21 @@ p {color: var(--p-text-color);}
     line-height: 1.14;
     letter-spacing: 0.02em;
     text-decoration: none;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-icon {
     margin-right: 10px;
     fill: var(--p-text-color);
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .item:hover .button-icon,
 .item:hover .contact-item,
 .item:focus .button-icon,
 .item:focus .contact-item {
     color: var(--accent-color);
-        fill: var(--accent-color);
+    fill: var(--accent-color);
 }
 .button-item {
     padding-top: 32px;
@@ -330,6 +368,8 @@ p {color: var(--p-text-color);}
     display: flex;
     align-items: center;
     justify-content: center;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .member-soc-link:hover,
 .member-soc-link:focus {
@@ -341,6 +381,8 @@ p {color: var(--p-text-color);}
 }
 .member-soc-icon {
     fill: #AFB1B8;
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Clients */
@@ -371,6 +413,7 @@ p {color: var(--p-text-color);}
     justify-content: center;
     color: #AFB1B8;
     
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-logo-link:hover ,
 .clients-logo-link:focus {
@@ -403,6 +446,8 @@ p {color: var(--p-text-color);}
     border: none;
     min-width: 130px;
     cursor: pointer;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button:hover,
 .button:focus {
@@ -423,36 +468,41 @@ p {color: var(--p-text-color);}
 .project-list-item:focus{
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-.project-list-item {
+.project-thumb {
     position: relative;
+    overflow: hidden;
 }
-.project-information {
+.project-text {
+ 
     position: absolute;
     top: 0;
-    left: 0;
     width: 100%;
+    height: 100%;
     padding: 63px 24px;
-    overflow: hidden;
+    opacity: 0;
+    
     font-size: 18px;
     line-height: 1.56;
     letter-spacing: 0.03em;
     color: var(--white-color);
     background-color:  rgba(33, 150, 243, 0.9);
 
-    transition-property: transform, overflow;
-    transition-delay: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateY(100%);
 
 }
-.project-information:hover,
-.project-information:focus {
-    overflow: visible;
+.project-overlay {
+    
+}
+.project-list-item:hover .project-text,
+.project-list-item:focus .project-text{
+    opacity: 1;
     transform: translateY(0);
 }
 .project-image {
     display: block;
 }
+
 .project-title {
     margin-bottom: 4px;
     font-size: 18px;
@@ -551,6 +601,8 @@ address {
     justify-content: center;
     background: rgba(255, 255, 255, 0.1);
     fill: var(--white-color);
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .soc-link:hover,
 .soc-link:focus {
