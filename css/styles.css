@@ -191,6 +191,7 @@ p {color: var(--p-text-color);}
     border-color: var(--accent-color);
     border-radius: 4px;
     border: none;
+    cursor: pointer;
 }
 .hero-button:hover
 .hero-button:focus {
@@ -243,6 +244,7 @@ button.modal-button {
     background-color: var(--white-color);
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .section.work,
@@ -583,6 +585,8 @@ address {
     font-size: 14px;
     line-height: 1.71;
     text-decoration: none;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 .footer-contact:hover,
 .footer-contact:focus {
