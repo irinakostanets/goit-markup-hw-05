@@ -148,6 +148,11 @@ p {color: var(--p-text-color);}
     color: var(--accent-color);
     fill: var(--accent-color);
 }
+.contact-item:focus .button-icon,
+.contact-item:focus {
+    color: var(--accent-color);
+    fill: var(--accent-color);
+}
 .button-item {
     padding-top: 32px;
     padding-bottom: 32px;
@@ -515,8 +520,8 @@ button.modal-button {
 .project-overlay {
     
 }
-.project-list-item:hover .project-text,
-.project-list-item:focus .project-text{
+.project-image:hover .project-text,
+.project-image:focus .project-text{
     opacity: 1;
     transform: translateY(0);
 }
